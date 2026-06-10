@@ -60,13 +60,15 @@
 
 ---
 
-### Projetos e frentes de trabalho
+### Projetos públicos
 
-- **Sistemas internos em .NET** para operação comercial e financeira
-- **APIs de integração** entre plataformas internas, parceiros e sistemas regulatórios
-- **Automações RPA** para captura, validação e processamento de dados
-- **Dashboards e fluxos inteligentes** para apoio à tomada de decisão
-- **IA no ciclo de desenvolvimento**, incluindo prompts técnicos, code review e aceleração de entregas
+| Projeto | Demonstração | Código |
+|---|---|---|
+| **.NET API Playbook** | [Site](https://adrianmoraisdev.github.io/dotnet-api-playbook/) | [GitHub](https://github.com/adrianmoraisdev/dotnet-api-playbook) |
+| **RPA Control Center** | [Site](https://adrianmoraisdev.github.io/rpa-control-center/) | [GitHub](https://github.com/adrianmoraisdev/rpa-control-center) |
+| **AI Agent Lab** | [Site](https://adrianmoraisdev.github.io/ai-agent-lab/) | [GitHub](https://github.com/adrianmoraisdev/ai-agent-lab) |
+| **Consortium Risk Simulator** | [Site](https://adrianmoraisdev.github.io/consortium-risk-simulator/) | [GitHub](https://github.com/adrianmoraisdev/consortium-risk-simulator) |
+| **Integration Monitor** | [Site](https://adrianmoraisdev.github.io/integration-monitor/) | [GitHub](https://github.com/adrianmoraisdev/integration-monitor) |
 
 ---
 

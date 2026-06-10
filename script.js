@@ -1,10 +1,10 @@
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 AOS.init({
-  duration: 900,
+  duration: 650,
   easing: "ease-out-cubic",
-  once: false,
-  mirror: true,
+  once: true,
+  mirror: false,
   offset: 80,
 });
 
@@ -17,7 +17,7 @@ if (window.tsParticles) {
       fpsLimit: 60,
       detectRetina: true,
       particles: {
-        number: { value: 70, density: { enable: true, area: 900 } },
+        number: { value: 42, density: { enable: true, area: 1000 } },
         color: { value: ["#20e7ff", "#adff3f", "#ffbd55"] },
         shape: { type: "circle" },
         opacity: { value: { min: 0.18, max: 0.55 } },
@@ -31,7 +31,7 @@ if (window.tsParticles) {
         },
         move: {
           enable: !prefersReducedMotion,
-          speed: 0.55,
+          speed: 0.35,
           direction: "none",
           random: true,
           straight: false,
@@ -54,8 +54,6 @@ if (window.tsParticles) {
 }
 
 if (window.gsap && !prefersReducedMotion) {
-  gsap.registerPlugin(ScrollTrigger);
-
   gsap.from(".split-title", {
     y: 42,
     duration: 1.1,
@@ -70,38 +68,6 @@ if (window.gsap && !prefersReducedMotion) {
     duration: 1.2,
     ease: "power4.out",
     delay: 0.35,
-  });
-
-  gsap.to(".holo-card", {
-    y: -22,
-    scrollTrigger: {
-      trigger: ".hero-section",
-      start: "top top",
-      end: "bottom top",
-      scrub: true,
-    },
-  });
-
-  gsap.utils.toArray(".capability-card, .project-card, .impact-tile").forEach((card) => {
-    gsap.to(card, {
-      y: -12,
-      scrollTrigger: {
-        trigger: card,
-        start: "top 85%",
-        end: "bottom 25%",
-        scrub: true,
-      },
-    });
-  });
-
-  gsap.to(".quote-line", {
-    backgroundPositionX: "0%",
-    scrollTrigger: {
-      trigger: ".quote-section",
-      start: "top 80%",
-      end: "bottom 30%",
-      scrub: true,
-    },
   });
 }
 
