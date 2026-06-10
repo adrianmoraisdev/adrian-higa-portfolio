@@ -1,77 +1,122 @@
-const canvas = document.getElementById("signal-canvas");
-const ctx = canvas.getContext("2d", { alpha: true });
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-let width = 0;
-let height = 0;
-let points = [];
+AOS.init({
+  duration: 900,
+  easing: "ease-out-cubic",
+  once: false,
+  mirror: true,
+  offset: 80,
+});
 
-function resize() {
-  const ratio = window.devicePixelRatio || 1;
-  width = window.innerWidth;
-  height = window.innerHeight;
-  canvas.width = Math.floor(width * ratio);
-  canvas.height = Math.floor(height * ratio);
-  canvas.style.width = `${width}px`;
-  canvas.style.height = `${height}px`;
-  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-
-  const count = width < 700 ? 34 : 62;
-  points = Array.from({ length: count }, () => ({
-    x: Math.random() * width,
-    y: Math.random() * height,
-    vx: (Math.random() - 0.5) * 0.28,
-    vy: (Math.random() - 0.5) * 0.28,
-    r: 1 + Math.random() * 1.8,
-  }));
+if (window.tsParticles) {
+  tsParticles.load({
+    id: "tsparticles",
+    options: {
+      fullScreen: { enable: false },
+      background: { color: "transparent" },
+      fpsLimit: 60,
+      detectRetina: true,
+      particles: {
+        number: { value: 70, density: { enable: true, area: 900 } },
+        color: { value: ["#20e7ff", "#adff3f", "#ffbd55"] },
+        shape: { type: "circle" },
+        opacity: { value: { min: 0.18, max: 0.55 } },
+        size: { value: { min: 1, max: 4 } },
+        links: {
+          enable: true,
+          color: "#20e7ff",
+          distance: 150,
+          opacity: 0.15,
+          width: 1,
+        },
+        move: {
+          enable: !prefersReducedMotion,
+          speed: 0.55,
+          direction: "none",
+          random: true,
+          straight: false,
+          outModes: { default: "out" },
+        },
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: !prefersReducedMotion, mode: "grab" },
+          onClick: { enable: !prefersReducedMotion, mode: "push" },
+          resize: { enable: true },
+        },
+        modes: {
+          grab: { distance: 180, links: { opacity: 0.4 } },
+          push: { quantity: 2 },
+        },
+      },
+    },
+  });
 }
 
-function draw() {
-  ctx.clearRect(0, 0, width, height);
-  ctx.fillStyle = "rgba(8, 10, 13, 0.16)";
-  ctx.fillRect(0, 0, width, height);
+if (window.gsap && !prefersReducedMotion) {
+  gsap.registerPlugin(ScrollTrigger);
 
-  for (const point of points) {
-    point.x += point.vx;
-    point.y += point.vy;
+  gsap.from(".split-title", {
+    y: 42,
+    duration: 1.1,
+    ease: "power4.out",
+    delay: 0.2,
+  });
 
-    if (point.x < -20) point.x = width + 20;
-    if (point.x > width + 20) point.x = -20;
-    if (point.y < -20) point.y = height + 20;
-    if (point.y > height + 20) point.y = -20;
-  }
+  gsap.from(".holo-card", {
+    rotateY: -14,
+    rotateX: 8,
+    y: 48,
+    duration: 1.2,
+    ease: "power4.out",
+    delay: 0.35,
+  });
 
-  for (let i = 0; i < points.length; i += 1) {
-    for (let j = i + 1; j < points.length; j += 1) {
-      const a = points[i];
-      const b = points[j];
-      const dx = a.x - b.x;
-      const dy = a.y - b.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < 150) {
-        const alpha = (1 - dist / 150) * 0.18;
-        ctx.strokeStyle = `rgba(37, 231, 255, ${alpha})`;
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.stroke();
-      }
-    }
-  }
+  gsap.to(".holo-card", {
+    y: -22,
+    scrollTrigger: {
+      trigger: ".hero-section",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
 
-  for (const point of points) {
-    const gradient = ctx.createRadialGradient(point.x, point.y, 0, point.x, point.y, 12);
-    gradient.addColorStop(0, "rgba(184, 255, 77, 0.9)");
-    gradient.addColorStop(1, "rgba(184, 255, 77, 0)");
-    ctx.fillStyle = gradient;
-    ctx.beginPath();
-    ctx.arc(point.x, point.y, 12, 0, Math.PI * 2);
-    ctx.fill();
-  }
+  gsap.utils.toArray(".capability-card, .project-card, .impact-tile").forEach((card) => {
+    gsap.to(card, {
+      y: -12,
+      scrollTrigger: {
+        trigger: card,
+        start: "top 85%",
+        end: "bottom 25%",
+        scrub: true,
+      },
+    });
+  });
 
-  requestAnimationFrame(draw);
+  gsap.to(".quote-line", {
+    backgroundPositionX: "0%",
+    scrollTrigger: {
+      trigger: ".quote-section",
+      start: "top 80%",
+      end: "bottom 30%",
+      scrub: true,
+    },
+  });
 }
 
-window.addEventListener("resize", resize);
-resize();
-draw();
+document.querySelectorAll(".tilt-card").forEach((card) => {
+  card.addEventListener("pointermove", (event) => {
+    if (prefersReducedMotion || window.innerWidth < 992) return;
+    const rect = card.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const rotateY = ((x / rect.width) - 0.5) * 10;
+    const rotateX = ((y / rect.height) - 0.5) * -10;
+    card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  card.addEventListener("pointerleave", () => {
+    card.style.transform = "";
+  });
+});

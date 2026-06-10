@@ -6,175 +6,317 @@
     <title>Adrian Higa | .NET, IA Aplicada e Automacao</title>
     <meta
       name="description"
-      content="Landing page profissional de Adrian Higa, desenvolvedor .NET back-end com foco em IA aplicada, RPA, APIs e integracao de sistemas."
+      content="Portfolio de Adrian Higa, desenvolvedor .NET back-end com foco em IA aplicada, RPA, APIs REST e integracao de sistemas."
+    />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
-    <canvas id="signal-canvas" aria-hidden="true"></canvas>
+  <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
+    <div id="tsparticles" aria-hidden="true"></div>
+    <div class="ambient-layer" aria-hidden="true"></div>
 
-    <header class="site-header" aria-label="Navegacao principal">
-      <a class="brand" href="#top" aria-label="Voltar ao inicio">
-        <span class="brand-mark">AH</span>
-        <span>Adrian Higa</span>
-      </a>
-      <nav class="nav-links" aria-label="Secoes">
-        <a href="#stack">Stack</a>
-        <a href="#impacto">Impacto</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </header>
+    <nav id="mainNav" class="navbar navbar-expand-lg fixed-top navbar-dark glass-nav">
+      <div class="container-xl">
+        <a class="navbar-brand d-flex align-items-center gap-3" href="#top" aria-label="Inicio">
+          <span class="brand-mark">AH</span>
+          <span class="fw-black">Adrian Higa</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarPortfolio"
+          aria-controls="navbarPortfolio"
+          aria-expanded="false"
+          aria-label="Abrir navegacao"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarPortfolio">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="#stack">Stack</a></li>
+            <li class="nav-item"><a class="nav-link" href="#impacto">Impacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+            <li class="nav-item ms-lg-2">
+              <a class="btn btn-neon btn-sm" href="mailto:adrianmorais.dev@gmail.com">
+                <i class="bi bi-send"></i>
+                Conversar
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <img
-          class="hero-bg"
-          src="./assets/neural-architecture.png"
-          alt="Arquitetura neural futurista com fluxos de dados e sistemas conectados"
-        />
-        <div class="hero-shade" aria-hidden="true"></div>
-        <div class="hero-grid" aria-hidden="true"></div>
-        <div class="hero-content">
-          <p class="eyebrow">.NET Back-end | IA Aplicada | RPA</p>
-          <h1 id="hero-title">Adrian Higa</h1>
-          <p class="hero-lead">
-            Desenvolvedor .NET/C# que transforma processos complexos em APIs, automacoes e agentes de IA prontos para operar no mundo real.
+      <section class="hero-section position-relative overflow-hidden">
+        <div class="container-xl position-relative">
+          <div class="row min-vh-100 align-items-center gy-5 pt-5">
+            <div class="col-lg-7 pt-5">
+              <span class="scan-badge mb-4">
+                <i class="bi bi-cpu"></i>
+                .NET Back-end | IA Aplicada | RPA
+              </span>
+              <h1 class="hero-title split-title mb-4">
+                Sistemas que <br class="d-sm-none" />executam <br class="d-sm-none" />codigo.
+                <span>Solucoes que executam objetivos.</span>
+              </h1>
+              <p class="hero-lead mb-4">
+                Eu sou Adrian Higa, desenvolvedor .NET/C# que conecta APIs, automacoes e agentes de IA para reduzir atrito operacional e acelerar entregas reais.
+              </p>
+              <div class="d-flex flex-column flex-sm-row gap-3 mb-5">
+                <a class="btn btn-neon btn-lg" href="mailto:adrianmorais.dev@gmail.com">
+                  <i class="bi bi-lightning-charge"></i>
+                  Falar sobre oportunidade
+                </a>
+                <a class="btn btn-glass btn-lg" href="https://www.linkedin.com/in/adrianhiga-tech/" target="_blank" rel="noreferrer">
+                  <i class="bi bi-linkedin"></i>
+                  LinkedIn
+                </a>
+              </div>
+              <div class="row g-3 hero-metrics">
+                <div class="col-6 col-md-4">
+                  <strong>3+</strong>
+                  <span>anos com .NET, RPA e integracoes</span>
+                </div>
+                <div class="col-6 col-md-4">
+                  <strong>40%</strong>
+                  <span>menos tempo em code review com IA</span>
+                </div>
+                <div class="col-12 col-md-4">
+                  <strong>24h</strong>
+                  <span>mentalidade de automacao operacional</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="holo-card tilt-card">
+                <img src="./assets/neural-architecture.png" alt="Arquitetura neural futurista" />
+                <div class="holo-overlay">
+                  <span class="status-dot"></span>
+                  <p>AI systems online</p>
+                </div>
+                <div class="code-window">
+                  <div class="window-dots"><span></span><span></span><span></span></div>
+                  <pre><code>agent.Run({
+  stack: ".NET + C#",
+  mode: "automation",
+  goal: "business impact"
+});</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ticker-section border-y">
+        <div class="ticker-track">
+          <span>C#</span><span>ASP.NET Core</span><span>APIs REST</span><span>SQL Server</span><span>Azure DevOps</span><span>GitHub Actions</span><span>Docker</span><span>OpenAI</span><span>RAG</span><span>RPA</span>
+          <span>C#</span><span>ASP.NET Core</span><span>APIs REST</span><span>SQL Server</span><span>Azure DevOps</span><span>GitHub Actions</span><span>Docker</span><span>OpenAI</span><span>RAG</span><span>RPA</span>
+        </div>
+      </section>
+
+      <section id="stack" class="section-space">
+        <div class="container-xl">
+          <div class="row align-items-end mb-5 gy-4">
+            <div class="col-lg-7" data-aos="fade-up">
+              <span class="section-kicker">Stack principal</span>
+              <h2 class="section-title">Back-end solido com inteligencia aplicada por cima.</h2>
+            </div>
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="120">
+              <p class="section-text mb-0">
+                Minha base e construir sistemas internos confiaveis, integrar areas de negocio e usar IA onde ela realmente acelera decisao, desenvolvimento e operacao.
+              </p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-6 col-xl-3" data-aos="flip-left">
+              <article class="capability-card">
+                <i class="bi bi-braces"></i>
+                <h3>.NET Back-end</h3>
+                <p>C#, .NET, ASP.NET Core, APIs REST, microsservicos, Entity Framework e SQL Server.</p>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3" data-aos="flip-left" data-aos-delay="100">
+              <article class="capability-card">
+                <i class="bi bi-stars"></i>
+                <h3>IA aplicada</h3>
+                <p>LLMs, agentes de IA, OpenAI, Azure OpenAI, Claude, Codex, RAG e embeddings.</p>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3" data-aos="flip-left" data-aos-delay="200">
+              <article class="capability-card">
+                <i class="bi bi-diagram-3"></i>
+                <h3>Automacao</h3>
+                <p>RPA, web scraping, dashboards, fluxos automatizados e integracao entre sistemas.</p>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3" data-aos="flip-left" data-aos-delay="300">
+              <article class="capability-card">
+                <i class="bi bi-rocket-takeoff"></i>
+                <h3>Entrega</h3>
+                <p>Azure DevOps, GitHub Actions, CI/CD, Docker, Jira, Trello, Scrum e Kanban.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="impacto" class="section-space impact-section">
+        <div class="container-xl">
+          <div class="row gy-4 align-items-center">
+            <div class="col-lg-5" data-aos="fade-right">
+              <span class="section-kicker">Impacto operacional</span>
+              <h2 class="section-title">Eu gosto de tecnologia que sai do slide e resolve o processo.</h2>
+            </div>
+            <div class="col-lg-7">
+              <div class="row g-3">
+                <div class="col-md-6" data-aos="zoom-in">
+                  <div class="impact-tile">
+                    <span>01</span>
+                    <h3>Menos trabalho manual</h3>
+                    <p>Automacoes e RPA para capturar, validar e mover informacao sem depender de tarefas repetitivas.</p>
+                  </div>
+                </div>
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="impact-tile">
+                    <span>02</span>
+                    <h3>Integracao real</h3>
+                    <p>APIs que conectam plataformas financeiras, vendas, atendimento e operacoes internas.</p>
+                  </div>
+                </div>
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="impact-tile">
+                    <span>03</span>
+                    <h3>IA no fluxo certo</h3>
+                    <p>Agentes e copilotos para revisar codigo, responder demandas, estruturar dados e apoiar decisoes.</p>
+                  </div>
+                </div>
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="impact-tile">
+                    <span>04</span>
+                    <h3>Entrega rastreavel</h3>
+                    <p>Backlog, SLAs, documentacao, CI/CD e visibilidade para areas tecnicas e de negocio.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projetos" class="section-space project-section">
+        <div class="container-xl">
+          <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-kicker">Frentes de projeto</span>
+            <h2 class="section-title mx-auto">Da demanda ao deploy, com IA acelerando o ciclo certo.</h2>
+          </div>
+
+          <div class="project-orbit">
+            <div class="row g-4">
+              <div class="col-lg-6" data-aos="fade-up">
+                <article class="project-card">
+                  <span class="project-tag">API</span>
+                  <h3>Integracoes e sistemas internos</h3>
+                  <p>APIs REST em .NET para conectar sistemas financeiros, vendedores, atendimento e operacoes internas.</p>
+                </article>
+              </div>
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <article class="project-card">
+                  <span class="project-tag">RPA</span>
+                  <h3>Automacao de processos</h3>
+                  <p>Fluxos que capturam dados, processam propostas, reduzem falhas manuais e aumentam previsibilidade.</p>
+                </article>
+              </div>
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <article class="project-card">
+                  <span class="project-tag">AI</span>
+                  <h3>Agentes e copilotos internos</h3>
+                  <p>LLMs aplicados a code review, suporte a demandas, analise de informacao e orquestracao de tarefas.</p>
+                </article>
+              </div>
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                <article class="project-card">
+                  <span class="project-tag">OPS</span>
+                  <h3>Operacao e governanca</h3>
+                  <p>CI/CD, LGPD, organizacao de backlog, documentacao e traducao de problemas de negocio em solucao tecnica.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="quote-section">
+        <div class="container-xl">
+          <p class="quote-line" data-aos="fade-up">
+            "Meu trabalho e desenhar sistemas que nao apenas executam codigo, mas eliminam atrito operacional."
           </p>
-          <div class="hero-actions" aria-label="Acoes principais">
-            <a class="btn btn-primary" href="mailto:adrianmorais.dev@gmail.com">Falar sobre uma oportunidade</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/adrianhiga-tech/" target="_blank" rel="noreferrer">Ver LinkedIn</a>
+        </div>
+      </section>
+
+      <section id="contato" class="section-space contact-section">
+        <div class="container-xl">
+          <div class="contact-panel" data-aos="zoom-in">
+            <div>
+              <span class="section-kicker">Disponivel para oportunidades</span>
+              <h2 class="section-title">.NET Back-end, IA aplicada e automacao inteligente.</h2>
+              <p class="section-text">
+                Aberto a vagas como Desenvolvedor .NET Back-end, Analista Desenvolvedor .NET, C# Developer e projetos de IA aplicada a sistemas corporativos.
+              </p>
+            </div>
+            <div class="d-flex flex-column flex-md-row gap-3">
+              <a class="btn btn-neon btn-lg" href="mailto:adrianmorais.dev@gmail.com">
+                <i class="bi bi-envelope"></i>
+                E-mail
+              </a>
+              <a class="btn btn-glass btn-lg" href="https://www.linkedin.com/in/adrianhiga-tech/" target="_blank" rel="noreferrer">
+                <i class="bi bi-linkedin"></i>
+                LinkedIn
+              </a>
+            </div>
           </div>
-        </div>
-        <aside class="hero-panel" aria-label="Resumo profissional">
-          <div>
-            <span class="panel-kicker">Foco atual</span>
-            <strong>IA aplicada em sistemas corporativos</strong>
-          </div>
-          <div>
-            <span class="panel-kicker">Base tecnica</span>
-            <strong>.NET, C#, APIs REST, SQL Server</strong>
-          </div>
-          <div>
-            <span class="panel-kicker">Entrega</span>
-            <strong>Automacao, integracao e ganho operacional</strong>
-          </div>
-        </aside>
-      </section>
-
-      <section class="signal-strip" aria-label="Competencias em destaque">
-        <span>C#</span>
-        <span>ASP.NET Core</span>
-        <span>APIs REST</span>
-        <span>SQL Server</span>
-        <span>Azure DevOps</span>
-        <span>OpenAI</span>
-        <span>RAG</span>
-        <span>RPA</span>
-      </section>
-
-      <section id="stack" class="section">
-        <div class="section-copy">
-          <p class="eyebrow">Stack que conecta negocio e engenharia</p>
-          <h2>Back-end robusto com uma camada inteligente por cima.</h2>
-          <p>
-            Experiencia criando sistemas internos, integracoes financeiras, fluxos automatizados e APIs que reduzem retrabalho, padronizam operacoes e tornam dados acionaveis.
-          </p>
-        </div>
-        <div class="stack-grid" aria-label="Stack tecnica">
-          <article class="skill-card">
-            <span class="skill-index">01</span>
-            <h3>Back-end .NET</h3>
-            <p>C#, .NET, ASP.NET Core, APIs REST, microsservicos, Entity Framework e SQL Server.</p>
-          </article>
-          <article class="skill-card">
-            <span class="skill-index">02</span>
-            <h3>IA aplicada</h3>
-            <p>LLMs, agentes de IA, OpenAI, Azure OpenAI, Claude, Codex, RAG e embeddings.</p>
-          </article>
-          <article class="skill-card">
-            <span class="skill-index">03</span>
-            <h3>Automacao</h3>
-            <p>RPA, web scraping, dashboards, automacao de fluxo e integracao entre areas.</p>
-          </article>
-          <article class="skill-card">
-            <span class="skill-index">04</span>
-            <h3>Entrega continua</h3>
-            <p>Azure DevOps, GitHub Actions, CI/CD, Docker, versionamento e praticas ageis.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="impacto" class="impact-band">
-        <div class="metric">
-          <span>40%</span>
-          <p>menos tempo em code review com apoio de IA e criterios consistentes.</p>
-        </div>
-        <div class="metric">
-          <span>3+</span>
-          <p>anos atuando com .NET, automacao, consorcios e sistemas internos.</p>
-        </div>
-        <div class="metric">
-          <span>24h</span>
-          <p>mentalidade de processos automatizados, monitoraveis e escalaveis.</p>
-        </div>
-      </section>
-
-      <section id="projetos" class="section split">
-        <div class="section-copy">
-          <p class="eyebrow">Onde eu gero tracao</p>
-          <h2>Da demanda de negocio ao deploy, com IA acelerando o ciclo certo.</h2>
-        </div>
-        <div class="timeline" aria-label="Frentes de projeto">
-          <article>
-            <span>API</span>
-            <h3>Integracoes e sistemas internos</h3>
-            <p>APIs REST para conectar plataformas financeiras, vendedores, atendimento e operacoes internas.</p>
-          </article>
-          <article>
-            <span>RPA</span>
-            <h3>Automacao de processos</h3>
-            <p>Fluxos que capturam dados, reduzem atividades manuais e melhoram confiabilidade operacional.</p>
-          </article>
-          <article>
-            <span>AI</span>
-            <h3>Agentes e copilotos internos</h3>
-            <p>Uso de LLMs para acelerar analise, revisao de codigo, atendimento a demandas e tomada de decisao.</p>
-          </article>
-          <article>
-            <span>OPS</span>
-            <h3>Entrega e governanca</h3>
-            <p>Backlog, SLAs, CI/CD, documentacao, LGPD e ponte entre area tecnica e area de negocio.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="quote-band" aria-label="Posicionamento">
-        <p>
-          "Meu trabalho e desenhar sistemas que nao apenas executam codigo, mas eliminam atrito operacional."
-        </p>
-      </section>
-
-      <section id="contato" class="contact-section">
-        <div>
-          <p class="eyebrow">Disponivel para oportunidades</p>
-          <h2>Back-end .NET, IA aplicada e automacao inteligente.</h2>
-          <p>
-            Aberto a vagas como Desenvolvedor .NET Back-end, Analista Desenvolvedor .NET, C# Developer e projetos de IA aplicada a sistemas corporativos.
-          </p>
-        </div>
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:adrianmorais.dev@gmail.com">adrianmorais.dev@gmail.com</a>
-          <a class="btn btn-secondary" href="https://www.linkedin.com/in/adrianhiga-tech/" target="_blank" rel="noreferrer">linkedin.com/in/adrianhiga-tech</a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <span>Adrian Higa</span>
-      <span>.NET Back-end + IA Aplicada</span>
+    <footer class="py-4 border-top border-secondary-subtle">
+      <div class="container-xl d-flex flex-column flex-md-row justify-content-between gap-2 text-secondary">
+        <span>Adrian Higa</span>
+        <span>.NET Back-end + IA Aplicada + Automacao</span>
+      </div>
     </footer>
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@4.1.3/tsparticles.bundle.min.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
