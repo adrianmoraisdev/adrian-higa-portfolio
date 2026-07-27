@@ -2,53 +2,53 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   ArrowUpRight,
-  BadgeCheck,
-  CreditCard,
-  FileCheck2,
+  GalleryHorizontalEnd,
+  Gauge,
   HeartHandshake,
-  LockKeyhole,
-  PanelsTopLeft
+  MessageCircleMore,
+  Palette,
+  Smartphone
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { asset, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Laços de Irmãs · Case de plataforma de cuidado",
+  title: "Laços de Irmãs · Case de marca e experiência digital",
   description:
-    "Case completo da plataforma Laços de Irmãs: produto multiportal em .NET para famílias, profissionais e operação de cuidado."
+    "Case do Laços de Irmãs: site de marca, catálogo e conversão para um ateliê de velas e lembranças artesanais."
 };
 
 const capabilities = [
   {
-    icon: PanelsTopLeft,
-    title: "Três jornadas conectadas",
-    text: "Experiências específicas para famílias, profissionais e administração, apoiadas pelo mesmo domínio."
-  },
-  {
-    icon: LockKeyhole,
-    title: "Identidade & segurança",
-    text: "Autenticação, autorização por papel, proteção de dados e trilhas de auditoria."
-  },
-  {
-    icon: CreditCard,
-    title: "Operação financeira",
-    text: "Preços, comissões, repasses, pagamentos, multas e conciliação no fluxo do plantão."
-  },
-  {
-    icon: FileCheck2,
-    title: "Documentos auditáveis",
-    text: "Contratos, recibos, documentos privados e persistência segura com histórico operacional."
-  },
-  {
-    icon: BadgeCheck,
-    title: "Qualidade verificável",
-    text: "Testes automatizados para regras de preço, documentos, pagamentos e jornadas críticas."
+    icon: Palette,
+    title: "Identidade traduzida",
+    text: "Tipografia, ritmo e cores construídos para preservar a delicadeza da marca e o caráter artesanal."
   },
   {
     icon: HeartHandshake,
-    title: "Tecnologia humana",
-    text: "Uma interface acolhedora para um domínio sensível, sem abrir mão de robustez técnica."
+    title: "História que aproxima",
+    text: "Narrativa sobre as três irmãs, o ofício e o cuidado presente em cada encomenda."
+  },
+  {
+    icon: GalleryHorizontalEnd,
+    title: "Catálogo visual",
+    text: "Coleções e galeria organizadas para comunicar variedade, personalização e qualidade."
+  },
+  {
+    icon: MessageCircleMore,
+    title: "Conversão direta",
+    text: "Chamadas para orçamento e contato via WhatsApp presentes nos pontos de maior intenção."
+  },
+  {
+    icon: Smartphone,
+    title: "Responsivo de verdade",
+    text: "Experiência adaptada para descoberta e contato em telas grandes ou no celular."
+  },
+  {
+    icon: Gauge,
+    title: "Leve e objetivo",
+    text: "Motion sutil, imagens equilibradas e navegação fluida sem competir com os produtos."
   }
 ];
 
@@ -59,46 +59,45 @@ export default function LacosCasePage() {
       <main className="case-main">
         <section className="case-hero">
           <div>
-            <p className="eyebrow">Case study · Healthtech operations</p>
+            <p className="eyebrow">Case study · Brand experience</p>
             <h1>Laços de Irmãs</h1>
             <p>
-              Plataforma full cycle criada para organizar a relação entre famílias,
-              profissionais de cuidado e operação administrativa. O produto público,
-              Afeto Divino, transforma uma jornada sensível em um fluxo digital seguro,
-              rastreável e simples de usar.
+              Experiência digital criada para apresentar uma marca familiar de velas e
+              lembranças artesanais. O site une história, coleções e intenção de compra
+              em uma jornada visual sensível, elegante e fácil de navegar.
             </p>
             <div className="tag-row">
-              {[".NET 9", "Blazor", "PostgreSQL", "Identity", "Docker", "CI/CD"].map(
+              {["Front-end", "UX/UI", "Motion", "Responsivo", "Performance", "WhatsApp"].map(
                 (tag) => <span key={tag}>{tag}</span>
               )}
             </div>
           </div>
           <div className="case-visual">
             <Image
-              src={asset("/projects/lacos/home.png")}
-              alt="Landing page Afeto Divino"
-              width={1366}
-              height={2100}
+              src={asset("/projects/lacos/home.webp")}
+              alt="Página inicial do Laços de Irmãs"
+              width={1600}
+              height={1000}
               priority
             />
           </div>
         </section>
 
         <section className="case-stat-grid" aria-label="Escopo do projeto">
-          <div><strong>3 portais</strong><span>Família, profissional e master</span></div>
-          <div><strong>Full cycle</strong><span>Produto, backend, UX e deploy</span></div>
-          <div><strong>Auditável</strong><span>Contratos, financeiro e logs</span></div>
-          <div><strong>Responsivo</strong><span>Jornadas desktop e mobile</span></div>
+          <div><strong>3 irmãs</strong><span>Uma história transformada em marca</span></div>
+          <div><strong>Catálogo</strong><span>Coleções, ateliê e galeria</span></div>
+          <div><strong>WhatsApp</strong><span>Orçamento no canal mais direto</span></div>
+          <div><strong>Responsivo</strong><span>Experiência desktop e mobile</span></div>
         </section>
 
         <section className="case-section">
           <p className="eyebrow">O desafio</p>
-          <h2>Digitalizar sem desumanizar.</h2>
+          <h2>Transformar afeto em experiência.</h2>
           <p>
-            O cuidado domiciliar combina urgência, confiança, documentação,
-            disponibilidade, pagamentos e acompanhamento. A arquitetura precisava
-            centralizar tudo isso sem criar uma experiência pesada para famílias ou
-            profissionais.
+            O desafio era dar presença digital a um trabalho essencialmente manual.
+            Cada detalhe precisava transmitir cuidado, delicadeza e confiança, ao mesmo
+            tempo que levava o visitante das primeiras impressões até o pedido de
+            orçamento sem atrito.
           </p>
           <div className="case-grid">
             {capabilities.map(({ icon: Icon, title, text }) => (
@@ -112,35 +111,57 @@ export default function LacosCasePage() {
         </section>
 
         <section className="case-section">
-          <p className="eyebrow">Arquitetura</p>
-          <h2>Um domínio, múltiplas experiências.</h2>
+          <p className="eyebrow">Estratégia de experiência</p>
+          <h2>História, produto e conversão no mesmo fluxo.</h2>
           <p>
-            A solução usa ASP.NET Core e Blazor para concentrar regras de negócio,
-            segurança e interfaces em uma base coerente. PostgreSQL persiste o domínio,
-            serviços isolam integrações e pipelines automatizados tornam homologação e
-            produção reproduzíveis.
+            A estrutura acompanha a forma como clientes conhecem uma marca artesanal:
+            primeiro a essência, depois a história, as coleções, o processo do ateliê,
+            provas visuais e respostas para dúvidas. O orçamento aparece como próximo
+            passo natural, sem interromper a narrativa.
           </p>
           <div className="architecture-strip">
-            <span>Blazor UI</span><ArrowUpRight />
-            <span>Domain services</span><ArrowUpRight />
-            <span>EF Core</span><ArrowUpRight />
-            <span>PostgreSQL</span><ArrowUpRight />
-            <span>Docker + CI/CD</span>
+            <span>Essência</span><ArrowUpRight />
+            <span>História</span><ArrowUpRight />
+            <span>Coleções</span><ArrowUpRight />
+            <span>Prova visual</span><ArrowUpRight />
+            <span>Orçamento</span>
           </div>
+        </section>
+
+        <section className="case-section case-video-section">
+          <p className="eyebrow">Demonstração real</p>
+          <h2>Veja a experiência completa.</h2>
+          <p>
+            O vídeo abaixo percorre a página publicada e mostra a narrativa, o catálogo,
+            a galeria, os depoimentos e a jornada de contato.
+          </p>
+          <video
+            className="case-video"
+            controls
+            playsInline
+            preload="metadata"
+            poster={asset("/projects/lacos/home.webp")}
+          >
+            <source
+              src={asset("/projects/lacos/lacos-de-irmas-demo.mp4")}
+              type="video/mp4"
+            />
+            Seu navegador não suporta reprodução de vídeo.
+          </video>
         </section>
 
         <section className="case-gallery" aria-label="Telas da plataforma">
           <figure>
-            <Image src={asset("/projects/lacos/master.png")} alt="Dashboard administrativo" width={1366} height={1137} />
-            <figcaption>Visão master: pessoas, operação, financeiro e auditoria.</figcaption>
+            <Image src={asset("/projects/lacos/home.webp")} alt="Página inicial Laços de Irmãs" width={1600} height={1000} />
+            <figcaption>Hero de marca com proposta clara e identidade artesanal.</figcaption>
           </figure>
           <figure>
-            <Image src={asset("/projects/lacos/familia.png")} alt="Portal da família" width={1366} height={1100} />
-            <figcaption>Portal da família com acompanhamento da jornada.</figcaption>
+            <Image src={asset("/projects/lacos/historia.webp")} alt="História das três irmãs" width={1600} height={1000} />
+            <figcaption>História da marca conectada ao processo artesanal.</figcaption>
           </figure>
           <figure>
-            <Image src={asset("/projects/lacos/profissional.png")} alt="Portal profissional" width={1366} height={1100} />
-            <figcaption>Portal profissional, disponibilidade e operação de plantões.</figcaption>
+            <Image src={asset("/projects/lacos/galeria.webp")} alt="Galeria de criações artesanais" width={1600} height={1000} />
+            <figcaption>Galeria que transforma variedade e acabamento em prova visual.</figcaption>
           </figure>
         </section>
 

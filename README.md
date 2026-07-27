@@ -11,7 +11,7 @@ backend .NET, sistemas corporativos, IA aplicada e automação.
 
 - Perfil, posicionamento e trajetória profissional
 - Especialidades em .NET, IA, automação e plataforma
-- Case principal: **Laços de Irmãs / Afeto Divino**
+- Case principal: **Laços de Irmãs**, experiência digital para uma marca artesanal
 - Case em produção: **[Achados na Web](https://achadosnaweb.com.br)**
 - Sistemas corporativos e automações apresentados com confidencialidade
 - Formulário de contato validado e links profissionais

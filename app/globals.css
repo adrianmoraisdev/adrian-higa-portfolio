@@ -245,6 +245,135 @@ img { max-width: 100%; }
   height: min(62vh, 42rem);
   filter: drop-shadow(0 0 90px rgba(182,255,53,.07));
 }
+.hero-portrait {
+  position: relative;
+  width: min(100%, 34rem);
+  aspect-ratio: 1 / 1.08;
+  justify-self: center;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+.hero-portrait::before {
+  content: "";
+  position: absolute;
+  inset: 10%;
+  z-index: -3;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(182,255,53,.2), rgba(182,255,53,.035) 48%, transparent 72%);
+  filter: blur(18px);
+}
+.portrait-frame {
+  position: relative;
+  width: 70%;
+  aspect-ratio: 1;
+  padding: .42rem;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 48% 48% 1.5rem 1.5rem;
+  background: linear-gradient(145deg, rgba(182,255,53,.3), rgba(255,255,255,.03));
+  box-shadow:
+    0 40px 90px rgba(0,0,0,.55),
+    0 0 0 1rem rgba(255,255,255,.015);
+}
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(5,7,6,.72), transparent 38%),
+    linear-gradient(125deg, transparent 55%, rgba(182,255,53,.12));
+  pointer-events: none;
+}
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: calc(48% - .2rem) calc(48% - .2rem) 1.15rem 1.15rem;
+  filter: saturate(.82) contrast(1.04);
+}
+.portrait-scan {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  box-shadow: 0 0 14px var(--accent);
+  opacity: .55;
+  animation: portraitScan 4.5s ease-in-out infinite;
+}
+@keyframes portraitScan {
+  0%, 100% { transform: translateY(0); opacity: 0; }
+  20%, 80% { opacity: .55; }
+  50% { transform: translateY(16rem); opacity: .3; }
+}
+.portrait-orbit {
+  position: absolute;
+  z-index: -1;
+  border: 1px solid rgba(182,255,53,.2);
+  border-radius: 50%;
+}
+.orbit-one {
+  width: 91%;
+  height: 72%;
+  transform: rotate(-18deg);
+  animation: orbitFloat 8s ease-in-out infinite;
+}
+.orbit-two {
+  width: 72%;
+  height: 92%;
+  border-color: rgba(255,255,255,.11);
+  transform: rotate(24deg);
+  animation: orbitFloat 9s ease-in-out infinite reverse;
+}
+@keyframes orbitFloat { 50% { transform: rotate(6deg) scale(1.03); } }
+.portrait-card {
+  position: absolute;
+  z-index: 4;
+  padding: .72rem .85rem;
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+  background: rgba(8,10,9,.78);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.25);
+}
+.portrait-role { left: 0; bottom: 14%; }
+.portrait-role span {
+  display: block;
+  margin-bottom: .35rem;
+  color: var(--muted);
+  font-size: .57rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.portrait-role strong { color: var(--text); font: 800 .72rem/1 var(--font-display); }
+.portrait-signal {
+  right: 0;
+  top: 18%;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  color: #dce9cf;
+  font-size: .62rem;
+}
+.portrait-signal i {
+  width: .45rem;
+  height: .45rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+.portrait-code {
+  position: absolute;
+  right: 8%;
+  bottom: 7%;
+  color: #747c75;
+  font: 700 .56rem/1 var(--font-display);
+  letter-spacing: .18em;
+}
 .hero-proof {
   grid-column: 1 / -1;
   padding-top: 1.4rem;
@@ -617,6 +746,16 @@ img { max-width: 100%; }
 .case-gallery figure:first-child { grid-column: 1 / -1; }
 .case-gallery img { display: block; width: 100%; height: auto; }
 .case-gallery figcaption { padding: 1rem; color: var(--muted); font-size: .72rem; }
+.case-video-section { width: min(calc(100% - 2.5rem), 1320px); }
+.case-video {
+  width: 100%;
+  margin-top: 2.5rem;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 1.2rem;
+  background: #0a0b0a;
+  box-shadow: 0 34px 90px rgba(0,0,0,.42);
+}
 .case-cta { width: min(calc(100% - 2.5rem), var(--max)); margin: 0 auto 7rem; padding: clamp(2rem, 5vw, 5rem); display: flex; align-items: center; justify-content: space-between; gap: 2rem; border: 1px solid var(--line-strong); border-radius: 1.4rem; background: rgba(182,255,53,.04); }
 .case-cta h2 { max-width: 15ch; margin: 0; font: 800 clamp(2rem, 4vw, 4rem)/1 var(--font-display); letter-spacing: -.05em; }
 
@@ -656,6 +795,7 @@ img { max-width: 100%; }
     grid-template-rows: auto auto auto;
   }
   .hero-scene { height: 18rem; grid-row: 2; }
+  .hero-portrait { width: min(92vw, 31rem); grid-row: 2; }
   .hero-title { font-size: clamp(3.5rem, 16.4vw, 6rem); }
   .hero-proof { grid-template-columns: 1fr; }
   .hero-proof > div { padding: 1rem 0 !important; border-left: 0 !important; border-bottom: 1px solid var(--line); }
@@ -684,6 +824,9 @@ img { max-width: 100%; }
   .brand small { display: none; }
   .hero { padding-inline: .8rem; }
   .hero-title { letter-spacing: -.09em; }
+  .portrait-frame { width: 74%; }
+  .portrait-role { left: 1%; bottom: 11%; }
+  .portrait-signal { right: 1%; top: 14%; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .button { width: 100%; }
   .expertise-grid { grid-template-columns: 1fr; }

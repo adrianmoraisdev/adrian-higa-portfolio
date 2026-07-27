@@ -1,6 +1,5 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
@@ -30,8 +29,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
 import { asset, site } from "@/lib/site";
-
-const HeroScene = dynamic(() => import("@/components/HeroScene"), { ssr: false });
 
 const reveal = {
   hidden: { opacity: 0, y: 28 },
@@ -206,7 +203,35 @@ export function HomeClient() {
               </a>
             </motion.div>
           </div>
-          <HeroScene />
+          <motion.div
+            className="hero-portrait"
+            initial={{ opacity: 0, scale: 0.94, y: 24 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 1.15, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="portrait-orbit orbit-one" />
+            <div className="portrait-orbit orbit-two" />
+            <div className="portrait-frame">
+              <Image
+                src={asset("/adrian-higa.webp")}
+                alt="Adrian Higa, Software Engineer"
+                width={640}
+                height={640}
+                priority
+                sizes="(max-width: 800px) 78vw, 38vw"
+              />
+              <div className="portrait-scan" />
+            </div>
+            <div className="portrait-card portrait-role">
+              <span>Current focus</span>
+              <strong>.NET · AI · Automation</strong>
+            </div>
+            <div className="portrait-card portrait-signal">
+              <i />
+              <span>Systems online</span>
+            </div>
+            <span className="portrait-code">AH / 2026</span>
+          </motion.div>
           <div className="hero-proof">
             <div>
               <strong>3+</strong>
@@ -335,16 +360,15 @@ export function HomeClient() {
               <span className="project-number">Projeto 01 · Case principal</span>
               <h3>Laços de Irmãs</h3>
               <p className="project-kicker">
-                Plataforma completa para conectar famílias, profissionais e operação
-                de cuidado.
+                Experiência digital para uma marca de velas e lembranças artesanais.
               </p>
               <p>
-                Produto multiportal com autenticação, contratos, pagamentos,
-                documentos, auditoria e jornadas responsivas — da descoberta ao
-                plantão acompanhado.
+                Site institucional e catálogo visual que transforma a história de três
+                irmãs em uma jornada delicada, responsiva e preparada para converter
+                encomendas pelo WhatsApp.
               </p>
               <div className="tag-row">
-                {[".NET 9", "Blazor", "PostgreSQL", "Docker", "Payments", "CI/CD"].map(
+                {["Front-end", "UX/UI", "Motion", "Responsivo", "Performance", "WhatsApp"].map(
                   (tag) => <span key={tag}>{tag}</span>
                 )}
               </div>
@@ -355,10 +379,10 @@ export function HomeClient() {
             <div className="project-visual laptop-frame">
               <div className="browser-bar"><i /><i /><i /></div>
               <Image
-                src={asset("/projects/lacos/home.png")}
-                alt="Página inicial da plataforma Afeto Divino"
-                width={1366}
-                height={2100}
+                src={asset("/projects/lacos/home.webp")}
+                alt="Página inicial do projeto Laços de Irmãs"
+                width={1600}
+                height={1000}
                 sizes="(max-width: 900px) 100vw, 56vw"
               />
             </div>
@@ -367,10 +391,10 @@ export function HomeClient() {
           <article className="project-featured project-achados">
             <div className="project-visual dashboard-frame">
               <Image
-                src={asset("/projects/achados/home.png")}
+                src={asset("/projects/achados/home-current.webp")}
                 alt="Vitrine do Achados na Web"
-                width={1900}
-                height={1000}
+                width={1600}
+                height={792}
                 sizes="(max-width: 900px) 100vw, 56vw"
               />
             </div>

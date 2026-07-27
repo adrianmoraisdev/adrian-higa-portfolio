@@ -80,17 +80,17 @@ export default function AchadosCasePage() {
           </div>
           <div className="case-visual">
             <Image
-              src={asset("/projects/achados/home.png")}
+              src={asset("/projects/achados/home-current.webp")}
               alt="Página inicial do Achados na Web"
-              width={1900}
-              height={1000}
+              width={1600}
+              height={792}
               priority
             />
           </div>
         </section>
 
         <section className="case-stat-grid" aria-label="Escopo do projeto">
-          <div><strong>Multi-store</strong><span>Catálogos e regras por parceiro</span></div>
+          <div><strong>6 lojas</strong><span>Parceiros e regras por catálogo</span></div>
           <div><strong>Automatizado</strong><span>Coleta, expiração e distribuição</span></div>
           <div><strong>SEO ready</strong><span>Descoberta e higiene de índice</span></div>
           <div><strong>Em produção</strong><span>Produto vivo e evolutivo</span></div>
@@ -136,16 +136,8 @@ export default function AchadosCasePage() {
 
         <section className="case-gallery" aria-label="Telas da plataforma">
           <figure>
-            <Image src={asset("/projects/achados/home.png")} alt="Vitrine multi-loja" width={1900} height={1000} />
-            <figcaption>Vitrine organizada por parceiros e categorias.</figcaption>
-          </figure>
-          <figure>
-            <Image src={asset("/projects/achados/produto.png")} alt="Detalhes da oferta" width={1900} height={1000} />
-            <figcaption>Detalhes da oferta com foco em decisão e clique seguro.</figcaption>
-          </figure>
-          <figure>
-            <Image src={asset("/projects/achados/mobile.png")} alt="Achados na Web no celular" width={430} height={900} />
-            <figcaption>Experiência mobile para descoberta rápida.</figcaption>
+            <Image src={asset("/projects/achados/home-current.webp")} alt="Vitrine multi-loja atual do Achados na Web" width={1600} height={792} />
+            <figcaption>Versão atual: navegação por Nike, KaBuM!, Shopee, Amazon, AliExpress e Doce Beleza.</figcaption>
           </figure>
         </section>
 
