@@ -1,112 +1,56 @@
-<h1 align="center">Olá! Eu sou Adrian Higa</h1>
+# Adrian Higa — Portfolio
 
-<p align="center">
-  <b>Desenvolvedor Back-end .NET/C# | IA Aplicada | RPA | APIs REST | Integração de Sistemas</b><br>
-  <i>"Código limpo, automação inteligente e soluções que reduzem atrito operacional."</i>
-</p>
+Portfólio profissional de **Adrian Higa**, Software Engineer especializado em
+backend .NET, sistemas corporativos, IA aplicada e automação.
 
-<p align="center">
-  <a href="https://adrianmoraisdev.github.io/adrian-higa-portfolio/" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-Online-ADFF3F?style=for-the-badge&logo=githubpages&logoColor=111111" alt="Portfolio" />
-  </a>
-  <a href="mailto:adrianmorais.dev@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-adrianmorais.dev-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
-  </a>
-  <a href="https://www.linkedin.com/in/adrianhiga-tech" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-Adrian_Higa-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-</p>
+[![Portfolio](https://img.shields.io/badge/portfolio-online-B6FF35?style=for-the-badge&logo=vercel&logoColor=050706)](https://adrianmoraisdev.github.io/adrian-higa-portfolio/)
+[![LinkedIn](https://img.shields.io/badge/linkedin-adrian_higa-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/adrianhiga-tech)
+[![GitHub](https://img.shields.io/badge/github-adrianmoraisdev-181717?style=for-the-badge&logo=github)](https://github.com/adrianmoraisdev)
 
----
+## O que este projeto apresenta
 
-### Sobre mim
+- Perfil, posicionamento e trajetória profissional
+- Especialidades em .NET, IA, automação e plataforma
+- Case principal: **Laços de Irmãs / Afeto Divino**
+- Case em produção: **[Achados na Web](https://achadosnaweb.com.br)**
+- Sistemas corporativos e automações apresentados com confidencialidade
+- Formulário de contato validado e links profissionais
 
-- Atuo como **Analista de TI Pleno / Analista de Sistemas** no **Consórcio Guerra Brasil**
-- Trabalho com **.NET, C#, ASP.NET Core, APIs REST, SQL Server, RPA, web scraping, dashboards e integrações de sistemas**
-- Tenho foco atual em **IA aplicada a processos corporativos**: LLMs, agentes de IA, OpenAI, Azure OpenAI, Claude, Codex, RAG e embeddings
-- Desenvolvo soluções que reduzem tarefas manuais, conectam áreas de negócio e aumentam a confiabilidade operacional
-- Tenho vivência com **Azure DevOps, GitHub Actions, CI/CD, Docker, Jira, Trello, Scrum, Kanban e LGPD**
-- Busco oportunidades como **Desenvolvedor .NET Back-end**, **Analista Desenvolvedor .NET**, **C# Developer** ou profissional de **IA aplicada a sistemas corporativos**
+## Stack
 
----
+- Next.js 15 + React 19 + TypeScript
+- Framer Motion + Lenis
+- React Three Fiber + Three.js
+- React Hook Form + Zod
+- Lucide Icons
+- Vercel Analytics
+- Static export para GitHub Pages
 
-### Stack principal
+## Desenvolvimento local
 
-<p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" title="C#" alt="C#" width="44" height="44"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" title=".NET" alt=".NET" width="44" height="44"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" title="SQL Server" alt="SQL Server" width="44" height="44"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" title="MySQL" alt="MySQL" width="44" height="44"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="44" height="44"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" title="HTML5" alt="HTML5" width="44" height="44"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" title="CSS3" alt="CSS3" width="44" height="44"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" title="Bootstrap" alt="Bootstrap" width="44" height="44"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" title="Docker" alt="Docker" width="44" height="44"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" title="Git" alt="Git" width="44" height="44"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" title="GitHub" alt="GitHub" width="44" height="44"/>
-</p>
+```bash
+npm install
+npm run dev
+```
 
----
+Validação de produção:
 
-### Áreas em que gero impacto
+```bash
+npm run typecheck
+npm run build
+```
 
-| Área | Como aplico |
-|---|---|
-| **Back-end .NET** | APIs REST, sistemas internos, integrações, manutenção e evolução de aplicações C# |
-| **IA aplicada** | LLMs, agentes de IA, RAG, embeddings, revisão de código assistida e automação inteligente |
-| **RPA e automação** | Web scraping, captura de dados, validação de dados e redução de tarefas manuais |
-| **DevOps e entrega** | Azure DevOps, GitHub Actions, CI/CD, Docker, backlog, SLAs e documentação |
-| **Negócio + tecnologia** | Tradução de demandas comerciais, financeiras e operacionais em soluções técnicas |
+## Publicação
+
+Todo push na branch `main` executa o workflow de build e publica o diretório
+estático no GitHub Pages.
+
+## Contato
+
+- [LinkedIn](https://www.linkedin.com/in/adrianhiga-tech)
+- [GitHub](https://github.com/adrianmoraisdev)
+- [E-mail](mailto:adrianmorais.dev@gmail.com)
 
 ---
 
-### Projetos públicos
-
-| Projeto | Demonstração | Código |
-|---|---|---|
-| **.NET API Playbook** | [Site](https://adrianmoraisdev.github.io/dotnet-api-playbook/) | [GitHub](https://github.com/adrianmoraisdev/dotnet-api-playbook) |
-| **RPA Control Center** | [Site](https://adrianmoraisdev.github.io/rpa-control-center/) | [GitHub](https://github.com/adrianmoraisdev/rpa-control-center) |
-| **AI Agent Lab** | [Site](https://adrianmoraisdev.github.io/ai-agent-lab/) | [GitHub](https://github.com/adrianmoraisdev/ai-agent-lab) |
-| **Consortium Risk Simulator** | [Site](https://adrianmoraisdev.github.io/consortium-risk-simulator/) | [GitHub](https://github.com/adrianmoraisdev/consortium-risk-simulator) |
-| **Integration Monitor** | [Site](https://adrianmoraisdev.github.io/integration-monitor/) | [GitHub](https://github.com/adrianmoraisdev/integration-monitor) |
-
----
-
-### Landing page
-
-Criei uma landing page futurista para apresentar minha atuação em .NET, IA aplicada, RPA e integração de sistemas:
-
-<p align="center">
-  <a href="https://adrianmoraisdev.github.io/adrian-higa-portfolio/" target="_blank">
-    <img src="https://img.shields.io/badge/Acessar_Portfolio-adrian--higa--portfolio-ADFF3F?style=for-the-badge&logo=githubpages&logoColor=111111" alt="Acessar portfolio" />
-  </a>
-</p>
-
----
-
-### GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=adrianmoraisdev&show_icons=true&theme=github_dark&hide_title=true&hide_rank=true" height="155" alt="GitHub stats"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=adrianmoraisdev&layout=compact&theme=github_dark" height="155" alt="Top languages"/>
-</p>
-
----
-
-### Contato
-
-<p align="center">
-  <a href="mailto:adrianmorais.dev@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-adrianmorais.dev-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
-  </a>
-  <a href="https://www.linkedin.com/in/adrianhiga-tech" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-Adrian_Higa-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="https://adrianmoraisdev.github.io/adrian-higa-portfolio/" target="_blank">
-    <img src="https://img.shields.io/badge/Portfolio-GitHub_Pages-ADFF3F?style=for-the-badge&logo=githubpages&logoColor=111111" alt="Portfolio" />
-  </a>
-</p>
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=adrianmoraisdev&color=brightgreen&style=flat" alt="Visualizações do perfil" />
-</p>
+Projetado e desenvolvido por **Adrian Higa**.
