@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, CheckCircle2, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { AgentTerminal } from "@/components/AgentTerminal";
+import { AttentionField } from "@/components/AttentionField";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Icon } from "@/components/Icon";
@@ -25,6 +26,7 @@ export default function HomePage() {
       <main id="conteudo">
         <section className="hero" id="top">
           <div className="hero-glow" aria-hidden="true" />
+          <AttentionField />
           <div className="container hero-grid">
             <div className="hero-copy">
               <p className="pill">
@@ -54,6 +56,10 @@ export default function HomePage() {
               </div>
               <p className="hero-location">
                 <MapPin size={16} aria-hidden="true" /> {site.location}
+              </p>
+              <p className="hero-hint">
+                <span aria-hidden="true">Q</span> Passe o cursor pelo fundo: ele vira a query de uma camada de atenção e
+                distribui pesos entre os tokens em tempo real.
               </p>
             </div>
             <div className="hero-visual">
